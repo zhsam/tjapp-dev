@@ -1,0 +1,26 @@
+{
+  "name": "tjapp-dev",
+  "version": "1.0.0",
+  "description": "A simple app that allows you to find suitable apps while traveling",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhsam/tjapp-dev.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhsam/tjapp-dev/issues"
+  },
+  "homepage": "https://github.com/zhsam/tjapp-dev#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "hbs": "^4.0.0",
+    "node-sass": "^4.10.0",
+    "particles.js": "^2.0.0",
+    "pug": "^2.0.3"
+  }
+}

@@ -1,0 +1,282 @@
+// define color
+$color_blue: #4A90E2
+$color_grey: #BEBEBE
+$color_white: #fff
+$color_black: #000
+
+$font_base_size: 10px
+
+$circle_h: 23em
+$r: 533.8
+
+// minxins
+@mixin Helvetica
+  font-family: 'Helvetica'
+@mixin text($size:2, $weight:500)
+  font-size: $font_base_size*$size
+  font-weight: $weight
+@mixin size($h, $w)
+  height: $h
+  width: $w
+@mixin Vertical($m: middle)
+  vertical-align: $m
+@mixin t($t)
+  top: $t
+@mixin l($l)
+  left: $l
+@mixin tl($t, $l)
+  +t($t)
+  +l($l)
+@mixin transform($l:50%,$t:-50%)
+  position: absolute
+  left: $l
+  transform: translateX($t)
+@mixin small-transform
+  position: absolute
+@mixin cir($c)
+  stroke-dasharray: $c
+
+
+// General settings
+h2, h3, p
+  color: $color_blue
+a
+  text-decoration: none
+ul, li
+  list-style: none
+// html, body
+//   width: 100%
+//   height: 100%
+//   padding: 0px
+//   margin: 0px
+// body
+//   box-sizing: border-box
+// .resume
+//   margin-left: auto
+//   margin-right: auto
+//   width: 90%
+//   height: 125em
+//   background-color: #eee
+//   box-shadow: 0px 0px 15px rgba(0,0,0,0.2)
+
+// ==== section0- nav bar ====
+// .nav
+//   position: absolute
+
+.bar1, .bar2, .bar3
+  width: 2.2em
+  height: 0.2em
+  background: $color_blue
+  margin-bottom: 8px
+
+li.bars
+  list-style: none
+  cursor: pointer
+  width: 25px
+  padding: 2em 2em 2em
+  position: absolute
+  & .bar1
+    -webkit-transition: all 0.3s ease-in-out
+    -moz-transition: all 0.3s ease-in-out
+    -o-transition: all 0.3s ease-in-out
+    transition: all 0.3s ease-in-out
+  & .bar2
+    -webkit-transition: all 0.3s ease-in-out
+    -moz-transition: all 0.3s ease-in-out
+    -o-transition: all 0.3s ease-in-out
+    transition: all 0.3s ease-in-out
+  & .bar3
+    -webkit-transition: all 0.3s ease-in-out
+    -moz-transition: all 0.3s ease-in-out
+    -o-transition: all 0.3s ease-in-out
+    transition: all 0.3s ease-in-out
+.bars.open
+  -webkit-transition: all 0.3s ease-in-out
+  -moz-transition: all 0.3s ease-in-out
+  -o-transition: all 0.3s ease-in-out
+  transition: all 0.3s ease-in-out
+  & .bar1
+    -moz-transform: rotate(45deg) translate(8px, 7px)
+    -o-transform: rotate(45deg) translate(8px, 7px)
+    -ms-transform: rotate(45deg) translate(8px, 7px)
+    -webkit-transform: rotate(45deg) translate(8px, 7px)
+    transform: rotate(45deg) translate(8px, 7px)
+  & .bar2
+    opacity: 0
+  & .bar3
+    -moz-transform: rotate(-45deg) translate(7px, -6px)
+    -o-transform: rotate(-45deg) translate(7px, -6px)
+    -ms-transform: rotate(-45deg) translate(7px, -6px)
+    -webkit-transform: rotate(-45deg) translate(7px, -6px)
+    transform: rotate(-45deg) translate(7px, -6px)
+.nav
+  display: none
+  +text(3.5)
+  text-decoration: none
+  position: absolute
+  color: $color_blue
+  border: 2px solid
+  padding: 10px
+$nav-h: 3em
+.nav-home
+  +tl($nav-h, 1em)
+.nav-edu
+  +tl($nav-h+3, 1em)
+.nav-work
+  +tl($nav-h+6, 1em)
+.nav-project
+  +tl($nav-h+9, 1em)
+.nav-competition
+  +tl($nav-h+12, 1em)
+
+*[title]
+  color: $color_white
+// ==== section0- particles ====
+#particles-js
+  width: 100%
+  height: 35em
+  background-color: #F7FEFF
+  padding: 0
+  margin: 0
+
+// ===== section1- header =====
+// 1- header in common
+.section1, #name-header, #keyword-header, .contact-header, .pageTitle
+  +transform(50%,-50%)
+  text-align: center
+#name, #name-header
+  +text(5)
+#keyword, #keyword-header
+  +text(3)
+.pageTitle
+  +t(5em)
+  +text(5)
+  text-decoration: underline
+.contact, .contact-header
+  padding-right: 5em
+.contact_icon
+  padding-left: 5em
+.logo
+  margin-top: 5em
+
+
+// 1- all page header
+#name-header
+  +t(0.5em)
+#keyword-header
+  +t(3.8em)
+.contact-header
+  +t(13em)
+
+// ==== section 2 - status ====
+// 2-status-left
+// General
+.section2, .section3, .section4, footer
+  +transform(50%,-50%)
+  +size(30em,100%)
+.status
+  float: left
+  +small-transform
+  text-align: center
+  +l(3em)
+  +text(2.5)
+.status > li
+  float: left
+.status > li > img
+  padding-top: 0.8em
+  padding-right: 0.8em
+// 2-status left
+$st: 1em
+.status-opportunity
+  +t($st)
+.status-job
+  +t($st+4)
+.status-profile
+  +t($st+8)
+.status-education
+  +t($st+12)
+// 2-status right
+.status-right
+  +small-transform
+  +text(2.5)
+  +tl($st+1, 23em)
+  text-align: inherit
+
+.status-right > ul
+  padding: 0
+
+// section 3 - skills
+.section3
+  +text(2.5)
+.skill-title
+  +small-transform
+  +tl($st+15, 2em)
+
+.circle
+  border-radius: 100%
+  +small-transform
+  +size(150,150)
+  border: solid 9px $color_grey
+  +tl($circle_h,2em)
+.circle-text
+  text-align: center
+  margin-top: 2.3em
+.skill1
+  +tl($circle_h, 1em)
+.skill2
+  +tl($circle_h, 8.5em)
+.skill3
+  +tl($circle_h, 16em)
+.skill4
+  +tl($circle_h, 23.5em)
+.skill5
+  +tl($circle_h, 31em)
+.skill1, .skill2, .skill3, .skill4, .skill5
+  +small-transform
+svg
+  +size(180,180)
+circle
+  fill: transparent
+  stroke-width: 9
+  stroke: $color_blue
+// max = r*2*3.14 = 85*2*3.14 = 533.8
+.skill1 circle
+  +cir($r*0.8)
+.skill2 circle
+  +cir($r*0.85)
+.skill3 circle
+  +cir($r*0.65)
+.skill4 circle
+  +cir($r*0.7)
+.skill5 circle
+  +cir($r*0.9)
+// section 4 - navigation
+footer
+  +t(95em)
+  position: relative
+.navi
+  position: absolute
+  padding: 0
+.navi p
+  +text(4.5)
+  position: absolute
+  color: $color_white
+  +l(1.5em)
+// #navi-edu, #navi-project
+//   +t(0em)
+#navi-work, #navi-competition
+  +t(13em)
+#navi-edu, #navi-work
+  +l(9em)
+#navi-project, #navi-competition
+  +l(30em)
+
+// horizontal line
+.main-hr
+  +small-transform
+  +t(90em)
+
+// Page Title
+// .pageTitle
+//   +small-transform
+//   +tl(10em,50%)
