@@ -18,9 +18,7 @@
   "homepage": "https://github.com/zhsam/tjapp-dev#readme",
   "dependencies": {
     "express": "^4.14.0",
-    "hbs": "^4.0.0",
     "node-sass": "^4.10.0",
-    "particles.js": "^2.0.0",
     "pug": "^2.0.3"
   }
 }
